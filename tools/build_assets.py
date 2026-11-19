@@ -668,6 +668,9 @@ def hero():
     p_c2 = {(c, r) for r, row in enumerate(CORE_2) for c, ch in enumerate(row) if ch == '#'}
     p_c3 = {(c, r) for r, row in enumerate(CORE_3) for c, ch in enumerate(row) if ch == '#'}
 
+    p_ptero1_left = {(44 - x, y) for x, y in pix("ptero1")}
+    p_ptero2_left = {(44 - x, y) for x, y in pix("ptero2")}
+
     defs = [
         sprite_path("dino_sit", p_sit),
         sprite_path("saguaro", p_saguaro),
@@ -679,8 +682,8 @@ def hero():
         sprite_path("fc1", p_c1),
         sprite_path("fc2", p_c2),
         sprite_path("fc3", p_c3),
-        sprite_path("ptero1", pix("ptero1")),
-        sprite_path("ptero2", pix("ptero2")),
+        sprite_path("ptero1", p_ptero1_left),
+        sprite_path("ptero2", p_ptero2_left),
         sprite_path("cloud", pix("cloud")),
         sprite_path("moon", pix("moon1")),
         sprite_path("star", pix("star1")),
@@ -703,48 +706,39 @@ def hero():
         ".sp4{animation:sp4 1.6s ease-out infinite 1.3s}",
         "@keyframes dblink{0%,93%,97%,100%{opacity:0}94%,96%{opacity:1}}",
         ".dblink{opacity:0;animation:dblink 3.8s steps(1,end) infinite}",
-        "@keyframes c0{0%,100%{transform:translateX(0)}50%{transform:translateX(-10px)}}",
-        ".c0{animation:c0 14s ease-in-out infinite}",
-        "@keyframes c1{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}",
-        ".c1{animation:c1 18s ease-in-out infinite}",
-        "@keyframes pterofly{0%{transform:translateX(-50px);opacity:0}1.5%{opacity:1}56%{transform:translateX(460px);opacity:1}56.1%{opacity:0;transform:translateX(470px)}100%{opacity:0;transform:translateX(-50px)}}",
-        ".pterofly{transform:translateX(360px);animation:pterofly 26s linear infinite}",
+        "@keyframes c0{0%{transform:translateX(460px)}100%{transform:translateX(-50px)}}",
+        ".c0{transform:translateX(310px);animation:c0 42s linear infinite -14s}",
+        "@keyframes c1{0%{transform:translateX(460px)}100%{transform:translateX(-50px)}}",
+        ".c1{transform:translateX(180px);animation:c1 56s linear infinite -36s}",
+        "@keyframes pterofly{0%{transform:translateX(470px);opacity:0}1.5%{opacity:1}54%{transform:translateX(-45px);opacity:1}54.1%{opacity:0;transform:translateX(-50px)}100%{opacity:0;transform:translateX(470px)}}",
+        ".pterofly{transform:translateX(340px);animation:pterofly 28s linear infinite}",
         "@keyframes pfa{0%,49.9%{opacity:1}50%,100%{opacity:0}}",
         "@keyframes pfb{0%,49.9%{opacity:0}50%,100%{opacity:1}}",
         ".pfa{animation:pfa .44s linear infinite}",
         ".pfb{opacity:0;animation:pfb .44s linear infinite}",
     ]
 
-    # Night sky: stars in corners (completely clear of text, dino, and fire) + moon + gentle hovering clouds + slow pterodactyl
+    # Night sky: clean stars + moon + smoothly drifting clouds + smaller pterodactyl flying right-to-left
     sky = [
-        # Top-left corner stars (well above MOHD JUNAID which starts at y=120)
-        '<use href="#star" x="18" y="14" fill="#5f5f5f"/>',
-        '<use href="#star" x="42" y="26" fill="#5f5f5f"/>',
-        '<use href="#star" x="72" y="10" fill="#5f5f5f"/>',
-        '<use href="#star" x="105" y="22" fill="#5f5f5f"/>',
-        '<use href="#star" x="140" y="12" fill="#5f5f5f"/>',
-        # Top-right corner and sky stars
-        '<use href="#star" x="235" y="14" fill="#5f5f5f"/>',
-        '<use href="#star" x="295" y="18" fill="#5f5f5f"/>',
-        '<use href="#star" x="345" y="55" fill="#5f5f5f"/>',
-        '<use href="#star" x="375" y="16" fill="#5f5f5f"/>',
-        '<use href="#star" x="412" y="38" fill="#5f5f5f"/>',
-        '<use href="#star" x="430" y="15" fill="#5f5f5f"/>',
-        '<use href="#star" x="435" y="65" fill="#5f5f5f"/>',
-        '<use href="#star" x="424" y="95" fill="#5f5f5f"/>',
-        # Moon
+        # Clean corner stars
+        '<use href="#star" x="28" y="14" fill="#5f5f5f"/>',
+        '<use href="#star" x="88" y="18" fill="#5f5f5f"/>',
+        # Moon & sky stars
         '<use href="#moon" x="250" y="24" fill="#6f6f6f"/>',
-        # Clouds gently hovering in right quadrant
+        '<use href="#star" x="235" y="16" fill="#5f5f5f"/>',
+        '<use href="#star" x="380" y="22" fill="#5f5f5f"/>',
+        '<use href="#star" x="430" y="60" fill="#5f5f5f"/>',
+        # Smoothly moving clouds drifting right to left across the upper sky
         f'<g fill="{DIM}">',
-        '<g transform="translate(325 36)"><use href="#cloud" class="c0"/></g>',
-        '<g transform="translate(385 75)"><use href="#cloud" class="c1"/></g>',
+        '<g transform="translate(0 14)"><use href="#cloud" class="c0"/></g>',
+        '<g transform="translate(0 30)"><use href="#cloud" class="c1"/></g>',
         '</g>',
-        # Majestic pterodactyl flying slowly across the sky from left to right
-        '<g transform="translate(0 28)"><g class="pterofly">'
-        '<g fill="#888888">'
+        # Smaller pterodactyl flying right-to-left across the sky
+        '<g transform="translate(0 20)"><g class="pterofly">'
+        '<g transform="scale(0.68)"><g fill="#888888">'
         '<use href="#ptero1" class="pfa"/>'
         '<use href="#ptero2" class="pfb"/>'
-        '</g></g></g>',
+        '</g></g></g></g>',
     ]
 
     bump = []
