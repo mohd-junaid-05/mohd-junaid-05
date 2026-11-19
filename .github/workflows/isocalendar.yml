@@ -1,0 +1,30 @@
+name: Isometric Commit Calendar
+
+on:
+  # Daily update at 00:00 UTC
+  schedule:
+    - cron: "0 0 * * *"
+  # Allows manual execution anytime via GitHub Actions tab
+  workflow_dispatch:
+  # Trigger on push to main branch
+  push:
+    branches:
+      - main
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Isometric Commit Calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          user: mohd-junaid-05
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          config_timezone: Asia/Kolkata
