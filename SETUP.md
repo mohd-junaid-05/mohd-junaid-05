@@ -7,7 +7,8 @@ Powers the profile README for [@mohd-junaid-05](https://github.com/mohd-junaid-0
 - `README.md` – the profile page. All meaningful content lives in Markdown, not only in artwork.
 - `assets/dino-world.svg` – animated hero: cozy night-mode scene with a pixel T-Rex sitting comfortably by a burning, crackling campfire.
 - `assets/checkpoint-panel.svg` – Checkpoint HUD panel with loading animation and running T-Rex.
-- `assets/metrics.plugin.isocalendar.svg` – isometric 3D commit calendar generated automatically by GitHub Actions (`.github/workflows/isocalendar.yml`).
+- `assets/metrics.plugin.isocalendar.svg` – isometric 3D commit calendar generated automatically by GitHub Actions (`.github/workflows/metrics.yml`).
+- `assets/metrics.plugin.languages.svg` – languages activity breakdown generated automatically by GitHub Actions (`.github/workflows/metrics.yml`).
 - `assets/static/` – animation-free twins of the animated assets, served to visitors who prefer reduced motion.
 - `tools/build_assets.py` – generates every SVG. **Edit this, not the SVGs.**
 - `tools/sprites.py` – the pixel art (editable ASCII bitmaps).

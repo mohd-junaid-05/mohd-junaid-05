@@ -83,7 +83,7 @@ This is the mindset I bring to Spec-Driven Development and product building.
 <br><br>
 
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=mohd-junaid-05&show_icons=true&hide_border=true&bg_color=0b0b0b&title_color=eeeeee&text_color=aaaaaa&icon_color=eeeeee&rank_icon=github" alt="GitHub contribution and repository statistics">
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohd-junaid-05&layout=compact&hide_border=true&bg_color=0b0b0b&title_color=eeeeee&text_color=aaaaaa" alt="Most used programming languages">
+<img src="assets/metrics.plugin.languages.svg" alt="Most used programming languages">
 
 <img src="https://streak-stats.demolab.com?user=mohd-junaid-05&hide_border=true&background=0B0B0B&ring=EEEEEE&fire=EEEEEE&currStreakLabel=EEEEEE&sideLabels=AAAAAA&dates=777777" alt="GitHub contribution streak">
 

@@ -1,4 +1,4 @@
-name: Isometric Commit Calendar
+name: GitHub Metrics
 
 on:
   # Daily update at 00:00 UTC
@@ -12,7 +12,7 @@ on:
       - main
 
 jobs:
-  metrics:
+  isocalendar:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -27,4 +27,26 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+          config_timezone: Asia/Kolkata
+
+  languages:
+    needs: isocalendar
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Languages Activity
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.plugin.languages.svg
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          user: mohd-junaid-05
+          base: ""
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, bytes-size, percentage
+          plugin_languages_limit: 8
+          plugin_languages_analysis_timeout: 15
           config_timezone: Asia/Kolkata
