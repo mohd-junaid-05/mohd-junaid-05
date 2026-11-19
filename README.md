@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/dino-world.svg">
-  <img src="assets/dino-world.svg" width="100%" alt="Mohd Junaid, full-stack developer: a pixel T-Rex runs, jumps cacti and ducks a pterodactyl in a Chrome Dino Runner style night scene">
+  <img src="assets/dino-world.svg" width="100%" alt="Mohd Junaid, full-stack developer: a pixel T-Rex sits comfortably by a burning, crackling campfire in a Chrome Dino Runner style night scene">
 </picture>
 
 [![LinkedIn](https://img.shields.io/badge/LINKEDIN-171717?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mohd-junaid-5248a3314)
@@ -13,24 +13,28 @@
 
 ## `01 / PLAYER PROFILE`
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/profile-panel.svg">
-  <img src="assets/profile-panel.svg" width="100%" alt="Player Profile: Mohd Junaid — third-year B.Tech Computer Science student, full-stack developer, and President of NEXUS Coding Club. Turning ideas into useful software with MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development.">
-</picture>
+<small>
+
+Hey, I’m **Mohd Junaid** — a third-year B.Tech Computer Science student, full-stack developer, and President of **NEXUS Coding Club**.
+
+I enjoy turning ideas into useful software, exploring how systems fit together, and building with AI. My current work sits around the **MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development (SDD)**.
+
+</small>
 
 ## `02 / CURRENT FOCUS`
+
+<small>
 
 - **Building:** Full-stack products and AI-powered developer tools.
 - **Exploring:** Agentic workflows, AI integrations, and automation.
 - **Practising:** Better system design, TypeScript, and spec-driven workflows.
 - **Contributing:** Workshops, learning activities, and community projects through NEXUS.
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/workflow-panel.svg">
-  <img src="assets/workflow-panel.svg" width="100%" alt="Engineering loop: specify, plan, build, evaluate">
-</picture>
+</small>
 
 ## `03 / HOW I BUILD`
+
+<small>
 
 I prefer a clear path from idea to implementation:
 
@@ -41,38 +45,27 @@ I prefer a clear path from idea to implementation:
 
 This is the mindset I bring to Spec-Driven Development and product building.
 
-<img src="assets/loadout-panel.svg" width="100%" alt="Inventory: languages, frontend, backend and toolkit slots">
+</small>
 
 ## `04 / TECH STACK`
 
 <div align="center">
 
-**LANGUAGES**
-<br>
+<sub><b>LANGUAGES</b></sub><br>
 <img src="https://skillicons.dev/icons?i=js,ts,python,c" alt="JavaScript, TypeScript, Python and C">
 
-**FRONTEND**
-<br>
+<br><sub><b>FRONTEND</b></sub><br>
 <img src="https://skillicons.dev/icons?i=html,css,react" alt="HTML, CSS and React">
 
-**BACKEND & DATABASES**
-<br>
+<br><sub><b>BACKEND & DATABASES</b></sub><br>
 <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres" alt="Node.js, Express, MongoDB, MySQL and PostgreSQL">
 
-**TOOLS**
-<br>
+<br><sub><b>TOOLS</b></sub><br>
 <img src="https://skillicons.dev/icons?i=git,github,vscode,figma,docker" alt="Git, GitHub, VS Code, Figma and Docker">
 
 </div>
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/dino-track.svg">
-  <img src="assets/dino-track.svg" width="100%" alt="A T-Rex jumps cacti on a scrolling desert level">
-</picture>
-
 ## `05 / FEATURED QUESTS`
-
-<img src="assets/quest-panel.svg" width="100%" alt="Quest log: Roomify, Ghost AI, Repnex and NEXUS">
 
 | PROJECT | WHAT IT DOES | STACK / AREA |
 |:--|:--|:--|
@@ -92,17 +85,16 @@ This is the mindset I bring to Spec-Driven Development and product building.
 
 </div>
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/dino-track.svg">
-  <img src="assets/dino-track.svg" width="100%" alt="A T-Rex jumps cacti while a pterodactyl flies overhead">
-</picture>
-
 ## `07 / NEXT CHECKPOINTS`
+
+<small>
 
 - [ ] Ship more useful full-stack products.
 - [ ] Improve architecture and engineering practices.
 - [ ] Build and evaluate more agentic workflows.
 - [ ] Make meaningful open-source contributions.
+
+</small>
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/checkpoint-panel.svg">
@@ -111,13 +103,13 @@ This is the mindset I bring to Spec-Driven Development and product building.
 
 ## `08 / LET’S CONNECT`
 
-Have an idea, want to collaborate, or just want to talk tech? Feel free to reach out.
+<small>Have an idea, want to collaborate, or just want to talk tech? Feel free to reach out.</small>
 
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/CONNECT_ON_LINKEDIN-EAEAEA?style=for-the-badge&logo=linkedin&logoColor=111111)](https://linkedin.com/in/mohd-junaid-5248a3314)
 [![Email](https://img.shields.io/badge/SEND_AN_EMAIL-EAEAEA?style=for-the-badge&logo=gmail&logoColor=111111)](mailto:junaid03mo22@gmail.com)
 
-*Keep building. Keep learning. Keep moving forward.*
+<small><i>Keep building. Keep learning. Keep moving forward.</i></small>
 
 </div>

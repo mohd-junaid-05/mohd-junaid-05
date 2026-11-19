@@ -470,28 +470,279 @@ def build_world(cfg):
     }
 
 
+SIT_ROWS = [
+    "                      ################        ",
+    "                      ################        ",
+    "                    ####################      ",
+    "                    ####  ##############      ",
+    "                    ####  ##############      ",
+    "                    ####################      ",
+    "                    ####################      ",
+    "                    ####################      ",
+    "                    ####################      ",
+    "                    ####################      ",
+    "                    ####################      ",
+    "                    ##########                ",
+    "                    ##########                ",
+    "                    ################          ",
+    "                    ################          ",
+    "                  ##########                  ",
+    "##                ##########                  ",
+    "##             #############                  ",
+    "##             #############                  ",
+    "####        ####################              ",
+    "####        ####################              ",
+    "######    ##################  ####            ",
+    "######    ##################  ####            ",
+    "############################                  ",
+    "############################                  ",
+    "############################                  ",
+    "############################                  ",
+    "  ##########################                  ",
+    "  ########################                    ",
+    "    ######################                    ",
+    "    ########################                  ",
+    "      ######################                  ",
+    "      ########################                ",
+    "####    ########################              ",
+    "######  ##########################            ",
+    "####################################          ",
+    "######################################        ",
+    "  ######################################      ",
+]
+
+CAMPFIRE_LOGS = [
+    "  ######        ######  ",
+    "  ####  ########  ####  ",
+    " ######  ######  ###### ",
+    "########################",
+    " ####              #### ",
+    "  ##                ##  ",
+]
+
+FLAME_1 = [
+    "        ##            ",
+    "       ####           ",
+    "       ####   ##      ",
+    "      ###### ####     ",
+    "      ###########     ",
+    "     #############    ",
+    "     #############    ",
+    "    ###############   ",
+    "    ###############   ",
+    "   #################  ",
+    "   #################  ",
+    "  ##################  ",
+    "  ##################  ",
+    " #################### ",
+    "######################",
+    "######################",
+]
+
+FLAME_2 = [
+    "          ##          ",
+    "         ####         ",
+    "   ##   ######        ",
+    "  ####  ######        ",
+    "  #############       ",
+    "  #############       ",
+    " ###############      ",
+    " ###############      ",
+    "#################     ",
+    "#################     ",
+    "#################     ",
+    " ##################   ",
+    " ##################   ",
+    " ##################   ",
+    "####################  ",
+    "####################  ",
+]
+
+FLAME_3 = [
+    "        ####          ",
+    "       ######         ",
+    "      ########        ",
+    "      ########        ",
+    "     ##########       ",
+    "     ##########       ",
+    "    ############      ",
+    "    ############      ",
+    "    ############      ",
+    "   ##############     ",
+    "   ##############     ",
+    "  ################    ",
+    "  ################    ",
+    " ##################   ",
+    "####################  ",
+    "####################  ",
+]
+
+CORE_1 = [
+    "                      ",
+    "                      ",
+    "                      ",
+    "        ####          ",
+    "       ######         ",
+    "       ######         ",
+    "      ########        ",
+    "      ########        ",
+    "     ##########       ",
+    "     ##########       ",
+    "     ##########       ",
+    "    ############      ",
+    "    ############      ",
+    "   ##############     ",
+    "   ##############     ",
+    "   ##############     ",
+]
+
+CORE_2 = [
+    "                      ",
+    "                      ",
+    "                      ",
+    "         ####         ",
+    "        ######        ",
+    "        ######        ",
+    "       ########       ",
+    "       ########       ",
+    "      ##########      ",
+    "      ##########      ",
+    "      ##########      ",
+    "     ############     ",
+    "     ############     ",
+    "    ##############    ",
+    "    ##############    ",
+    "    ##############    ",
+]
+
+CORE_3 = [
+    "                      ",
+    "                      ",
+    "                      ",
+    "       ####           ",
+    "      ######          ",
+    "      ######          ",
+    "     ########         ",
+    "     ########         ",
+    "    ##########        ",
+    "    ##########        ",
+    "    ##########        ",
+    "   ############       ",
+    "   ############       ",
+    "  ##############      ",
+    "  ##############      ",
+    "  ##############      ",
+]
+
+
 def hero():
     H = 330
-    cfg = dict(
-        w=W, line_y=282, v=150, P=10, clear=28,
-        events=[
-            dict(kind="cactus", sprite="cs2", y=105, spawn=0.0, base=170, act="jump"),
-            dict(kind="cactus", sprite="cl1", y=90, spawn=1.8, base=250, act="jump"),
-            dict(kind="ptero", y=75, spawn=4.6, speed=170, base=300, act="duck"),
-            dict(kind="cactus", sprite="cs3", y=105, spawn=5.67, base=372, act="jump"),
-        ],
-        clouds=[(215, 36), (330, 62)], moon=(124, 40), stars=[(92, 10), (152, 18), (150, 70)],
-    )
-    w = build_world(cfg)
-    css = w["css"]
-    # live score: ones/tens/hundreds tick like the game's distance meter
-    css += "@keyframes tk{to{transform:translateY(-130px)}}"
-    for k in range(3):
-        css += f".tk{k}{{animation:tk {fmt(2 * 10 ** k)}s steps(10,end) infinite}}"
-    strip = "".join(f'<use href="#n{i % 10}" y="{13 * i}"/>' for i in range(11))
-    defs = w["defs"] + digit_defs() + f'<g id="strip" fill="{INK}">{strip}</g>'
+    line_y = 282
+    oy = line_y - 2 * LINE_Y
+    xw = W // 2
 
-    # score block, right aligned to x=876: "HI 00184  00000"
+    p_sit = {(c, r) for r, row in enumerate(SIT_ROWS) for c, ch in enumerate(row) if ch == '#'}
+    p_logs = {(c, r) for r, row in enumerate(CAMPFIRE_LOGS) for c, ch in enumerate(row) if ch == '#'}
+    p_f1 = {(c, r) for r, row in enumerate(FLAME_1) for c, ch in enumerate(row) if ch == '#'}
+    p_f2 = {(c, r) for r, row in enumerate(FLAME_2) for c, ch in enumerate(row) if ch == '#'}
+    p_f3 = {(c, r) for r, row in enumerate(FLAME_3) for c, ch in enumerate(row) if ch == '#'}
+    p_c1 = {(c, r) for r, row in enumerate(CORE_1) for c, ch in enumerate(row) if ch == '#'}
+    p_c2 = {(c, r) for r, row in enumerate(CORE_2) for c, ch in enumerate(row) if ch == '#'}
+    p_c3 = {(c, r) for r, row in enumerate(CORE_3) for c, ch in enumerate(row) if ch == '#'}
+
+    defs = [
+        digit_defs(),
+        sprite_path("dino_sit", p_sit),
+        sprite_path("logs", p_logs),
+        sprite_path("fl1", p_f1),
+        sprite_path("fl2", p_f2),
+        sprite_path("fl3", p_f3),
+        sprite_path("fc1", p_c1),
+        sprite_path("fc2", p_c2),
+        sprite_path("fc3", p_c3),
+        sprite_path("cloud", pix("cloud")),
+        sprite_path("moon", pix("moon1")),
+        sprite_path("star", pix("star1")),
+    ]
+
+    strip = "".join(f'<use href="#n{i % 10}" y="{13 * i}"/>' for i in range(11))
+    defs.append(f'<g id="strip" fill="{INK}">{strip}</g>')
+
+    css = [
+        ".fl1{animation:fl1 .45s steps(1,end) infinite}",
+        ".fl2{animation:fl2 .45s steps(1,end) infinite}",
+        ".fl3{animation:fl3 .45s steps(1,end) infinite}",
+        "@keyframes fl1{0%,33.3%{opacity:1}33.4%,100%{opacity:0}}",
+        "@keyframes fl2{0%,33.3%{opacity:0}33.4%,66.6%{opacity:1}66.7%,100%{opacity:0}}",
+        "@keyframes fl3{0%,66.6%{opacity:0}66.7%,100%{opacity:1}}",
+        "@keyframes sp1{0%{transform:translate(0,0);opacity:1}100%{transform:translate(-3px,-22px);opacity:0}}",
+        "@keyframes sp2{0%{transform:translate(0,0);opacity:1}100%{transform:translate(4px,-26px);opacity:0}}",
+        "@keyframes sp3{0%{transform:translate(0,0);opacity:1}100%{transform:translate(1px,-30px);opacity:0}}",
+        ".sp1{animation:sp1 1.4s ease-out infinite}",
+        ".sp2{animation:sp2 1.8s ease-out infinite .5s}",
+        ".sp3{animation:sp3 2.2s ease-out infinite 1s}",
+        "@keyframes dblink{0%,94%,98%,100%{opacity:0}95%,97%{opacity:1}}",
+        ".dblink{animation:dblink 4s steps(1,end) infinite}",
+        "@keyframes tk{to{transform:translateY(-130px)}}",
+        ".tk0{animation:tk 2s steps(10,end) infinite}",
+        ".tk1{animation:tk 20s steps(10,end) infinite}",
+        ".tk2{animation:tk 200s steps(10,end) infinite}",
+        "@keyframes c0{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
+        ".c0{animation:c0 60s linear infinite}",
+        "@keyframes c1{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
+        ".c1{animation:c1 80s linear infinite}",
+    ]
+
+    sky = [
+        '<use href="#moon" x="140" y="38" fill="#6f6f6f"/>',
+        '<use href="#star" x="96" y="16" fill="#5f5f5f"/>',
+        '<use href="#star" x="124" y="66" fill="#5f5f5f"/>',
+        '<use href="#star" x="220" y="24" fill="#5f5f5f"/>',
+        '<use href="#star" x="280" y="52" fill="#5f5f5f"/>',
+        '<use href="#star" x="380" y="22" fill="#5f5f5f"/>',
+        f'<g fill="{DIM}">',
+        '<g transform="translate(180 46)"><use href="#cloud" class="c0"/></g>',
+        '<g transform="translate(320 72)"><use href="#cloud" class="c1"/></g>',
+        '</g>'
+    ]
+
+    bump = []
+    for i, seg in enumerate((0, 1, 0)):
+        d = path_d(rects(horizon_bumps(seg, 0, 600)))
+        bump.append(f'<path transform="translate({600 * i} {LINE_Y})" d="{d}"/>')
+    ground = (f'<rect x="0" y="{LINE_Y}" width="{xw}" height="1" fill="#b4b4b4"/>'
+              f'<g fill="#8a8a8a">{"".join(bump)}</g>')
+
+    dino_elem = (
+        f'<g fill="{INK}">'
+        f'<use href="#dino_sit" x="35" y="94"/>'
+        f'<rect class="dblink" x="59" y="97" width="2" height="2" fill="{BG}"/>'
+        f'</g>'
+    )
+
+    fire_elem = (
+        f'<g transform="translate(90 109)">'
+        f'<rect class="sp1" x="9" y="4" width="2" height="2" fill="#ffaa00"/>'
+        f'<rect class="sp2" x="14" y="2" width="2" height="2" fill="#ffdd00"/>'
+        f'<rect class="sp3" x="6" y="6" width="1" height="1" fill="#ff7700"/>'
+        f'<g fill="#ff5e00">'
+        f'<use href="#fl1" class="fl1"/>'
+        f'<use href="#fl2" class="fl2"/>'
+        f'<use href="#fl3" class="fl3"/>'
+        f'</g>'
+        f'<g fill="#ffdd00">'
+        f'<use href="#fc1" class="fl1"/>'
+        f'<use href="#fc2" class="fl2"/>'
+        f'<use href="#fc3" class="fl3"/>'
+        f'</g>'
+        f'<use href="#logs" y="16" fill="#7a7a7a"/>'
+        f'</g>'
+    )
+
+    wrap = f'<g transform="translate(0 {oy}) scale(2)">'
+    world_front = wrap + ground + dino_elem + fire_elem + "</g>"
+    world_sky = wrap + "".join(sky) + "</g>"
+
     sx = 876 - (2 + 1 + 5 + 1 + 5) * 22 + 2
     hud = [digits("HI", sx, 18, 2, SOFT), digits("00184", sx + 66, 18, 2, SOFT)]
     live_x = sx + 66 + 5 * 22 + 22
@@ -500,21 +751,21 @@ def hero():
         x = live_x + (4 - k) * 22
         hud.append(f'<svg x="{x}" y="18" width="22" height="26" overflow="hidden">'
                    f'<g transform="scale(2)"><g class="tk{k}"><use href="#strip"/></g></g></svg>')
+
     body = [
         f'<path d="{notch(1, 1, W - 2, H - 2, 6)}" fill="{BG}" stroke="{EDGE}" stroke-width="2"/>',
-        w["sky"],
+        world_sky,
         text("Player 01", 40, 24, 3, SOFT),
         "".join(hud),
         text("MOHD JUNAID", 340, 62, 8, INK),
         text("Full-stack developer", 342, 136, 4, SOFT),
-        w["front"],
+        world_front,
     ]
-    return svg(H, "Mohd Junaid: Dino Runner player profile",
-               "A monochrome pixel-art endless runner in the style of the Chrome offline dinosaur game. "
-               "The T-Rex runs, jumps over cacti and ducks under a pterodactyl on a scrolling desert, under a "
-               "night sky with a moon, stars and clouds. The title reads Mohd Junaid, full-stack developer, "
-               "CSE student and builder.",
-               css, defs, "".join(body))
+
+    return svg(H, "Mohd Junaid: Dino resting by the campfire",
+               "A pixel-art scene where the Chrome Dino is sitting comfortably by a burning, crackling "
+               "campfire under a night sky with stars, moon, and drifting clouds.",
+               "".join(css), "".join(defs), "".join(body))
 
 
 def track():
