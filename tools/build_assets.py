@@ -649,9 +649,10 @@ def hero():
     p_c1 = {(c, r) for r, row in enumerate(CORE_1) for c, ch in enumerate(row) if ch == '#'}
     p_c2 = {(c, r) for r, row in enumerate(CORE_2) for c, ch in enumerate(row) if ch == '#'}
     p_c3 = {(c, r) for r, row in enumerate(CORE_3) for c, ch in enumerate(row) if ch == '#'}
+    p_cs1 = pix("cactus_cs1")
+    p_cs2 = pix("cactus_cs2")
 
     defs = [
-        digit_defs(),
         sprite_path("dino_sit", p_sit),
         sprite_path("logs", p_logs),
         sprite_path("fl1", p_f1),
@@ -660,13 +661,12 @@ def hero():
         sprite_path("fc1", p_c1),
         sprite_path("fc2", p_c2),
         sprite_path("fc3", p_c3),
+        sprite_path("cs1", p_cs1),
+        sprite_path("cs2", p_cs2),
         sprite_path("cloud", pix("cloud")),
         sprite_path("moon", pix("moon1")),
         sprite_path("star", pix("star1")),
     ]
-
-    strip = "".join(f'<use href="#n{i % 10}" y="{13 * i}"/>' for i in range(11))
-    defs.append(f'<g id="strip" fill="{INK}">{strip}</g>')
 
     css = [
         ".fl1{animation:fl1 .45s steps(1,end) infinite}",
@@ -683,10 +683,6 @@ def hero():
         ".sp3{animation:sp3 2.2s ease-out infinite 1s}",
         "@keyframes dblink{0%,94%,98%,100%{opacity:0}95%,97%{opacity:1}}",
         ".dblink{animation:dblink 4s steps(1,end) infinite}",
-        "@keyframes tk{to{transform:translateY(-130px)}}",
-        ".tk0{animation:tk 2s steps(10,end) infinite}",
-        ".tk1{animation:tk 20s steps(10,end) infinite}",
-        ".tk2{animation:tk 200s steps(10,end) infinite}",
         "@keyframes c0{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
         ".c0{animation:c0 60s linear infinite}",
         "@keyframes c1{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
@@ -694,15 +690,15 @@ def hero():
     ]
 
     sky = [
-        '<use href="#moon" x="140" y="38" fill="#6f6f6f"/>',
-        '<use href="#star" x="96" y="16" fill="#5f5f5f"/>',
-        '<use href="#star" x="124" y="66" fill="#5f5f5f"/>',
+        '<use href="#moon" x="170" y="38" fill="#6f6f6f"/>',
+        '<use href="#star" x="80" y="20" fill="#5f5f5f"/>',
+        '<use href="#star" x="130" y="55" fill="#5f5f5f"/>',
         '<use href="#star" x="220" y="24" fill="#5f5f5f"/>',
         '<use href="#star" x="280" y="52" fill="#5f5f5f"/>',
         '<use href="#star" x="380" y="22" fill="#5f5f5f"/>',
         f'<g fill="{DIM}">',
-        '<g transform="translate(180 46)"><use href="#cloud" class="c0"/></g>',
-        '<g transform="translate(320 72)"><use href="#cloud" class="c1"/></g>',
+        '<g transform="translate(190 46)"><use href="#cloud" class="c0"/></g>',
+        '<g transform="translate(340 72)"><use href="#cloud" class="c1"/></g>',
         '</g>'
     ]
 
@@ -713,15 +709,23 @@ def hero():
     ground = (f'<rect x="0" y="{LINE_Y}" width="{xw}" height="1" fill="#b4b4b4"/>'
               f'<g fill="#8a8a8a">{"".join(bump)}</g>')
 
+    cacti = (
+        f'<g fill="#8a8a8a">'
+        f'<use href="#cs1" x="14" y="105"/>'
+        f'<use href="#cs2" x="150" y="105"/>'
+        f'<use href="#cs1" x="395" y="105"/>'
+        f'</g>'
+    )
+
     dino_elem = (
         f'<g fill="{INK}">'
-        f'<use href="#dino_sit" x="35" y="94"/>'
-        f'<rect class="dblink" x="59" y="97" width="2" height="2" fill="{BG}"/>'
+        f'<use href="#dino_sit" x="42" y="94"/>'
+        f'<rect class="dblink" x="66" y="97" width="2" height="2" fill="{BG}"/>'
         f'</g>'
     )
 
     fire_elem = (
-        f'<g transform="translate(90 109)">'
+        f'<g transform="translate(98 109)">'
         f'<rect class="sp1" x="9" y="4" width="2" height="2" fill="#ffaa00"/>'
         f'<rect class="sp2" x="14" y="2" width="2" height="2" fill="#ffdd00"/>'
         f'<rect class="sp3" x="6" y="6" width="1" height="1" fill="#ff7700"/>'
@@ -740,31 +744,21 @@ def hero():
     )
 
     wrap = f'<g transform="translate(0 {oy}) scale(2)">'
-    world_front = wrap + ground + dino_elem + fire_elem + "</g>"
+    world_front = wrap + ground + cacti + dino_elem + fire_elem + "</g>"
     world_sky = wrap + "".join(sky) + "</g>"
 
-    sx = 876 - (2 + 1 + 5 + 1 + 5) * 22 + 2
-    hud = [digits("HI", sx, 18, 2, SOFT), digits("00184", sx + 66, 18, 2, SOFT)]
-    live_x = sx + 66 + 5 * 22 + 22
-    hud.append(digits("00", live_x, 18, 2, INK))
-    for k in range(3):
-        x = live_x + (4 - k) * 22
-        hud.append(f'<svg x="{x}" y="18" width="22" height="26" overflow="hidden">'
-                   f'<g transform="scale(2)"><g class="tk{k}"><use href="#strip"/></g></g></svg>')
-
+    name_x = 550
     body = [
         f'<path d="{notch(1, 1, W - 2, H - 2, 6)}" fill="{BG}" stroke="{EDGE}" stroke-width="2"/>',
         world_sky,
-        text("Player 01", 40, 24, 3, SOFT),
-        "".join(hud),
-        text("MOHD JUNAID", 340, 62, 8, INK),
-        text("Full-stack developer", 342, 136, 4, SOFT),
+        text("MOHD JUNAID", name_x, 78, 6, INK, anchor="m"),
+        text("Full-stack developer", name_x, 142, 3, SOFT, anchor="m"),
         world_front,
     ]
 
     return svg(H, "Mohd Junaid: Dino resting by the campfire",
                "A pixel-art scene where the Chrome Dino is sitting comfortably by a burning, crackling "
-               "campfire under a night sky with stars, moon, and drifting clouds.",
+               "campfire surrounded by desert cacti under a night sky with stars, moon, and clouds.",
                "".join(css), "".join(defs), "".join(body))
 
 
