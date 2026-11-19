@@ -179,6 +179,10 @@ _F = {
     "_": "...../...../...../...../...../...../#####",
     "!": "#/#/#/#/#/./#",
     "'": "#/#/././././.",
+    '"': "#.#/#.#/././././.",
+    "&": ".##./#..#/.##./.#.#/#..#/#..#/.##.#",
+    ";": "././#/././.#/#.",
+    "—": "..../..../..../######/..../..../....",
 }
 FONT = {k: v.split("/") for k, v in _F.items()}
 
@@ -186,6 +190,15 @@ FONT = {k: v.split("/") for k, v in _F.items()}
 def text_pixels(s):
     p, x = set(), 0
     for ch in s:
+        if ch not in FONT:
+            if ch == "’":
+                ch = "'"
+            elif ch in "“”":
+                ch = '"'
+            elif ch in "–—":
+                ch = "-"
+            else:
+                ch = " "
         g = FONT[ch]
         for r, row in enumerate(g):
             for c, v in enumerate(row):
@@ -531,24 +544,23 @@ def track():
 BLINK = ".blink{animation:blink 1s steps(1,end) infinite}@keyframes blink{50%{opacity:0}}"
 
 
-def mission():
-    H = 282
-    items = [("Build", "Ship useful products"), ("Learn", "Agentic systems + TS"),
-             ("Improve", "System design + SDD"), ("Status", "In progress")]
-    cw, ch = 420, 84
-    b = chrome(H, "Mission control", "Player 01")
-    for i, (label, sub) in enumerate(items):
-        x = 24 + (i % 2) * (cw + 12)
-        y = 64 + (i // 2) * (ch + 12)
-        b.append(box(x, y, cw, ch))
-        b.append(text(label, x + 16, y + 10, 4, INK))
-        b.append(text(sub, x + 16, y + 48, 3, SOFT))
-    sx, sy = 24 + 432 + cw - 38, 64 + 96 + 16
-    b.append(f'<rect class="blink" x="{sx}" y="{sy}" width="14" height="14" fill="{INK}"/>')
+def profile_panel():
+    H = 250
+    b = chrome(H, "Player profile", "Player 01")
+    b.append(box(24, 66, W - 48, 146))
+    b.append(text("Hey, I'm Mohd Junaid - a third-year B.Tech Computer Science student,", 44, 84, 2, INK))
+    b.append(text("full-stack developer, and President of NEXUS Coding Club.", 44, 106, 2, INK))
+    b.append(text("I enjoy turning ideas into useful software, exploring how systems fit", 44, 138, 2, SOFT))
+    b.append(text("together, and building with AI. My current work sits around the MERN", 44, 160, 2, SOFT))
+    last = "stack, TypeScript, Agentic Engineering, and Spec-Driven Development."
+    b.append(text(last, 44, 182, 2, SOFT))
+    cursor_x = 44 + text_w(last, 2) + 8
+    b.append(f'<rect class="blink" x="{cursor_x}" y="182" width="8" height="14" fill="{INK}"/>')
     b.append(ground_footer(H - 22))
-    return svg(H, "Mission control: current objectives",
-               "Heads-up display with four slots: Build, ship useful products. Learn, agentic systems and "
-               "TypeScript. Improve, system design and spec-driven development. Status, in progress.",
+    return svg(H, "Mohd Junaid: Player profile",
+               "Heads-up display showing Mohd Junaid's developer introduction: third-year B.Tech "
+               "Computer Science student, full-stack developer, President of NEXUS Coding Club, "
+               "working with MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development.",
                BLINK, digit_defs(), "".join(b))
 
 
@@ -675,7 +687,7 @@ def static_variant(data):
 
 
 ASSETS = {
-    "dino-world.svg": hero, "dino-track.svg": track, "mission-panel.svg": mission,
+    "dino-world.svg": hero, "dino-track.svg": track, "profile-panel.svg": profile_panel,
     "workflow-panel.svg": workflow, "loadout-panel.svg": loadout, "quest-panel.svg": quests,
     "checkpoint-panel.svg": checkpoint,
 }

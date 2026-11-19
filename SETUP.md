@@ -7,7 +7,7 @@ Powers the profile README for [@mohd-junaid-05](https://github.com/mohd-junaid-0
 - `README.md` – the profile page. All meaningful content lives in Markdown, not only in artwork.
 - `assets/dino-world.svg` – animated hero: night-mode Dino Runner scene (jump, duck, scrolling ground, ticking score).
 - `assets/dino-track.svg` – reusable level strip used as a section divider.
-- `assets/mission-panel.svg`, `workflow-panel.svg`, `loadout-panel.svg`, `quest-panel.svg`, `checkpoint-panel.svg` – HUD panels.
+- `assets/profile-panel.svg`, `workflow-panel.svg`, `loadout-panel.svg`, `quest-panel.svg`, `checkpoint-panel.svg` – HUD panels.
 - `assets/static/` – animation-free twins of the animated assets, served to visitors who prefer reduced motion.
 - `tools/build_assets.py` – generates every SVG. **Edit this, not the SVGs.**
 - `tools/sprites.py` – the pixel art (editable ASCII bitmaps).

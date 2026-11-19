@@ -13,13 +13,9 @@
 
 ## `01 / PLAYER PROFILE`
 
-Hey, I’m **Mohd Junaid** — a third-year B.Tech Computer Science student, full-stack developer, and President of **NEXUS Coding Club**.
-
-I enjoy turning ideas into useful software, exploring how systems fit together, and building with AI. My current work sits around the **MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development (SDD)**.
-
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/mission-panel.svg">
-  <img src="assets/mission-panel.svg" width="100%" alt="Mission control: build useful products, learn agentic systems and TypeScript, improve system design and SDD, status in progress">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/profile-panel.svg">
+  <img src="assets/profile-panel.svg" width="100%" alt="Player Profile: Mohd Junaid — third-year B.Tech Computer Science student, full-stack developer, and President of NEXUS Coding Club. Turning ideas into useful software with MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development.">
 </picture>
 
 ## `02 / CURRENT FOCUS`
