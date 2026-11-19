@@ -1,119 +1,145 @@
 <div align="center">
 
+<!-- HERO: CHROME DINO RUNNER WORLD -->
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/dino-world.svg">
-  <img src="assets/dino-world.svg" width="100%" alt="Mohd Junaid, full-stack developer: a pixel T-Rex sits comfortably by a burning, crackling campfire in a Chrome Dino Runner style night scene">
+  <img src="assets/dino-world.svg" width="100%" alt="Mohd Junaid, full-stack developer: a pixel T-Rex sits comfortably by a burning campfire in a Chrome Dino Runner style night scene">
 </picture>
 
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-171717?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mohd-junaid-5248a3314)
-[![Instagram](https://img.shields.io/badge/INSTAGRAM-171717?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/md__junaid_05)
-[![Email](https://img.shields.io/badge/EMAIL-171717?style=for-the-badge&logo=gmail&logoColor=white)](mailto:junaid03mo22@gmail.com)
+<br>
+
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0b0b0b?style=for-the-badge&logo=linkedin&logoColor=e6e6e6&borderColor=2a2a2a)](https://linkedin.com/in/mohd-junaid-5248a3314)
+[![Twitter / X](https://img.shields.io/badge/TWITTER-0b0b0b?style=for-the-badge&logo=x&logoColor=e6e6e6&borderColor=2a2a2a)](https://twitter.com/mohd_junaid_22)
+[![GitHub](https://img.shields.io/badge/GITHUB-0b0b0b?style=for-the-badge&logo=github&logoColor=e6e6e6&borderColor=2a2a2a)](https://github.com/mohd-junaid-05)
+[![Instagram](https://img.shields.io/badge/INSTAGRAM-0b0b0b?style=for-the-badge&logo=instagram&logoColor=e6e6e6&borderColor=2a2a2a)](https://instagram.com/md__junaid_05)
+[![Email](https://img.shields.io/badge/EMAIL-0b0b0b?style=for-the-badge&logo=gmail&logoColor=e6e6e6&borderColor=2a2a2a)](mailto:junaid03mo22@gmail.com)
 
 </div>
 
-## `01 / PLAYER PROFILE`
+---
 
-<small>
+### `01 / PLAYER PROFILE`
 
-Hey, I’m **Mohd Junaid** — a third-year B.Tech Computer Science student, full-stack developer, and President of **NEXUS Coding Club**.
+> *"Turning ideas into resilient software through modular architectures, AI agents, and spec-driven execution."*
 
-I enjoy turning ideas into useful software, exploring how systems fit together, and building with AI. My current work sits around the **MERN stack, TypeScript, Agentic Engineering, and Spec-Driven Development (SDD)**.
+Hey, I'm **Mohd Junaid** — a third-year B.Tech Computer Science student, Full-Stack Developer, and President of **NEXUS Coding Club**.
 
-</small>
+My engineering focus centers on building reliable web applications and intelligent developer tooling. I spend my time exploring how distributed systems fit together, orchestrating **Agentic Workflows**, and implementing **Spec-Driven Development (SDD)** across the modern JavaScript/TypeScript ecosystem.
 
-## `02 / CURRENT FOCUS`
+- 🔭 **Current Focus:** Full-stack product architecture, multi-agent AI systems, and developer ergonomics.
+- 🛠️ **Engineering Mindset:** Spec first, plan modularly, build atomically, evaluate rigorously.
+- 🏛️ **Community & Leadership:** Leading NEXUS Coding Club — organizing hands-on hackathons, technical workshops, and student developer initiatives.
 
-<small>
+---
 
-- **Building:** Full-stack products and AI-powered developer tools.
-- **Exploring:** Agentic workflows, AI integrations, and automation.
-- **Practising:** Better system design, TypeScript, and spec-driven workflows.
-- **Contributing:** Workshops, learning activities, and community projects through NEXUS.
+### `02 / HOW I BUILD : THE ENGINEERING LOOP`
 
-</small>
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/workflow-panel.svg">
+  <img src="assets/workflow-panel.svg" width="100%" alt="Engineering loop: 01 Specify, 02 Plan, 03 Build, 04 Evaluate">
+</picture>
 
-## `03 / HOW I BUILD`
+I believe the fastest path to clean, reliable software is structured rigor:
 
-<small>
+1. **`01 / SPECIFY`** — Clarify the exact problem statement, boundary constraints, and testable acceptance criteria before writing code.
+2. **`02 / PLAN`** — Architect data schemas, API contracts, and state flows; decompose large systems into verifiable steps.
+3. **`03 / BUILD`** — Implement in small, atomic, readable iterations with tight feedback loops and strong type safety.
+4. **`04 / EVALUATE`** — Stress test edge cases, profile performance bottlenecks, and refine user experience.
 
-I prefer a clear path from idea to implementation:
+---
 
-1. **Specify** the problem and expected outcome.
-2. **Plan** the architecture and break work into steps.
-3. **Build** in small, understandable iterations.
-4. **Evaluate** the result, test it, and improve it.
+### `03 / INVENTORY & TECH STACK`
 
-This is the mindset I bring to Spec-Driven Development and product building.
-
-</small>
-
-## `04 / TECH STACK`
+<picture>
+  <img src="assets/loadout-panel.svg" width="100%" alt="Inventory: equipped skills and tools">
+</picture>
 
 <div align="center">
 
-<sub><b>LANGUAGES</b></sub><br>
-<img src="https://skillicons.dev/icons?i=js,ts,python,c" alt="JavaScript, TypeScript, Python and C">
-
-<br><sub><b>FRONTEND</b></sub><br>
-<img src="https://skillicons.dev/icons?i=html,css,react" alt="HTML, CSS and React">
-
-<br><sub><b>BACKEND & DATABASES</b></sub><br>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres" alt="Node.js, Express, MongoDB, MySQL and PostgreSQL">
-
-<br><sub><b>TOOLS</b></sub><br>
-<img src="https://skillicons.dev/icons?i=git,github,vscode,figma,docker" alt="Git, GitHub, VS Code, Figma and Docker">
+| CATEGORY | EQUIPPED TECHNOLOGIES & TOOLS |
+|:---|:---|
+| **Core & Languages** | `TypeScript` `JavaScript (ESNext)` `Python` `C` `HTML5` `CSS3` |
+| **Frontend & UI** | `React 19` `Next.js 16` `Tailwind CSS` `Vite` `Redux Toolkit` |
+| **Backend & APIs** | `Node.js` `Express.js` `RESTful APIs` `JWT Auth` `WebSockets` |
+| **Databases** | `MongoDB` `PostgreSQL` `MySQL` `Mongoose` `Prisma` |
+| **AI & Agentic Tech** | `Agentic Workflows` `Gemini 2.5 Flash` `Puter AI` `LLM Tooling` `SDD` |
+| **DevOps & Tooling** | `Git` `GitHub Actions` `Docker` `VS Code` `Postman` `Figma` |
 
 </div>
 
-## `05 / FEATURED QUESTS`
+---
 
-| PROJECT | WHAT IT DOES | STACK / AREA |
-|:--|:--|:--|
-| **Roomify** | Turns 2D floor plans into photorealistic, top-down 3D room views. | `React 19` `Gemini 2.5 Flash` `Puter AI` |
-| **Ghost AI** | Collaborative system-design workspace that turns plain-English ideas into shared system designs. | `Next.js 16` `TypeScript` `AI Agents` |
-| **Repnex** | AI-focused developer workspace exploring a more connected way to build with AI tools. | `Agentic Workflows` `AI` [Repository](https://github.com/mohd-junaid-05/Repnex) |
-| **NEXUS Coding Club** | Student developer community focused on learning, workshops, building, and contribution. | `Leadership` `Mentoring` `Community` |
+### `04 / FEATURED QUESTS`
 
-## `06 / GITHUB ACTIVITY`
+<picture>
+  <img src="assets/quest-panel.svg" width="100%" alt="Quest log: featured projects and community">
+</picture>
+
+| PROJECT | SUMMARY & HIGHLIGHTS | TECH STACK | REPOSITORY / LINK |
+|:---|:---|:---|:---:|
+| **Roomify** | Transforms 2D architectural floor plans into photorealistic, top-down 3D room renders using generative visual reasoning. | `React 19` `Gemini 2.5 Flash` `Puter AI` | [Explore](https://github.com/mohd-junaid-05/Roomify) |
+| **Ghost AI** | Collaborative system-design workspace that synthesizes natural language architecture prompts into interactive system diagrams. | `Next.js 16` `TypeScript` `AI Agents` | [Explore](https://github.com/mohd-junaid-05/ghost-ai) |
+| **Repnex** | Next-generation developer workspace exploring interconnected, spec-driven development orchestrated by AI agents. | `Agentic Engineering` `AI Tooling` `TS` | [Explore](https://github.com/mohd-junaid-05/Repnex) |
+| **Inkloom** | Constrained AI branding model pipeline that translates company identity rules into vector logo assets. | `Python` `AI Pipeline` `Automation` | [Explore](https://github.com/mohd-junaid-05/inkloom) |
+| **NEXUS Club** | Student developer community providing technical workshops, coding bootcamps, and real-world project mentorship. | `Leadership` `Mentoring` `Community` | [Portal](https://github.com/mohd-junaid-05/nexus-website) |
+
+---
+
+### `05 / GITHUB TELEMETRY & ACTIVITY`
 
 <div align="center">
 
-<img src="assets/metrics.plugin.isocalendar.svg" alt="Isometric Commit Calendar" width="100%">
+<!-- ISOMETRIC COMMIT CALENDAR (AUTO-GENERATED BY GITHUB ACTIONS) -->
+<picture>
+  <img src="assets/metrics.plugin.isocalendar.svg" alt="Isometric Commit Calendar">
+</picture>
 
 <br><br>
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=mohd-junaid-05&show_icons=true&hide_border=true&bg_color=0b0b0b&title_color=eeeeee&text_color=aaaaaa&icon_color=eeeeee&rank_icon=github" alt="GitHub contribution and repository statistics">
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohd-junaid-05&layout=compact&hide_border=true&bg_color=0b0b0b&title_color=eeeeee&text_color=aaaaaa" alt="Most used programming languages">
+<!-- GITHUB STATS & LANGUAGES (THEMED TO MONOCHROME PALETTE #0B0B0B / #2A2A2A) -->
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=mohd-junaid-05&show_icons=true&hide_border=false&border_color=2a2a2a&bg_color=0b0b0b&title_color=e6e6e6&text_color=9c9c9c&icon_color=e6e6e6&rank_icon=github" alt="GitHub contribution and repository statistics">
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohd-junaid-05&layout=compact&hide_border=false&border_color=2a2a2a&bg_color=0b0b0b&title_color=e6e6e6&text_color=9c9c9c" alt="Most used programming languages">
 
-<img src="https://streak-stats.demolab.com?user=mohd-junaid-05&hide_border=true&background=0B0B0B&ring=EEEEEE&fire=EEEEEE&currStreakLabel=EEEEEE&sideLabels=AAAAAA&dates=777777" alt="GitHub contribution streak">
+<br>
+
+<img src="https://streak-stats.demolab.com?user=mohd-junaid-05&hide_border=false&border=2A2A2A&background=0B0B0B&ring=E6E6E6&fire=E6E6E6&currStreakLabel=E6E6E6&sideLabels=9C9C9C&dates=5B5B5B" alt="GitHub contribution streak">
 
 </div>
 
-## `07 / NEXT CHECKPOINTS`
+---
 
-<small>
+### `06 / NEXT CHECKPOINTS`
 
-- [ ] Ship more useful full-stack products.
-- [ ] Improve architecture and engineering practices.
-- [ ] Build and evaluate more agentic workflows.
-- [ ] Make meaningful open-source contributions.
-
-</small>
+- [x] **Nexus Hub:** Built student workshops and campus developer initiatives.
+- [x] **AI Systems:** Prototyped agentic AI developer tools (*Roomify*, *Ghost AI*, *Repnex*).
+- [ ] **Production Products:** Ship end-to-end, spec-driven SaaS web applications.
+- [ ] **Open-Source Tooling:** Contribute to agentic frameworks, developer CLI tools, and libraries.
+- [ ] **Technical Writing:** Publish architectural breakdowns on system design and spec-driven AI.
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/static/checkpoint-panel.svg">
   <img src="assets/checkpoint-panel.svg" width="100%" alt="Checkpoint: next level loading, a T-Rex runs toward a finish flag">
 </picture>
 
-## `08 / LET’S CONNECT`
+---
 
-<small>Have an idea, want to collaborate, or just want to talk tech? Feel free to reach out.</small>
+### `07 / LET'S CONNECT`
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│  STATUS: OPEN FOR COLLABORATION & INTRIGUING AI / FULL-STACK PROJECTS  │
+│  BASE: INDIA (IST)  •  ROLE: STUDENT & FULL-STACK SYSTEM BUILDER       │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/CONNECT_ON_LINKEDIN-EAEAEA?style=for-the-badge&logo=linkedin&logoColor=111111)](https://linkedin.com/in/mohd-junaid-5248a3314)
-[![Email](https://img.shields.io/badge/SEND_AN_EMAIL-EAEAEA?style=for-the-badge&logo=gmail&logoColor=111111)](mailto:junaid03mo22@gmail.com)
+[![Connect on LinkedIn](https://img.shields.io/badge/CONNECT_ON_LINKEDIN-0b0b0b?style=for-the-badge&logo=linkedin&logoColor=e6e6e6&borderColor=2a2a2a)](https://linkedin.com/in/mohd-junaid-5248a3314)
+[![Twitter / X](https://img.shields.io/badge/FOLLOW_ON_X-0b0b0b?style=for-the-badge&logo=x&logoColor=e6e6e6&borderColor=2a2a2a)](https://twitter.com/mohd_junaid_22)
+[![Send an Email](https://img.shields.io/badge/SEND_AN_EMAIL-0b0b0b?style=for-the-badge&logo=gmail&logoColor=e6e6e6&borderColor=2a2a2a)](mailto:junaid03mo22@gmail.com)
 
-<small><i>Keep building. Keep learning. Keep moving forward.</i></small>
+<br>
+
+*Keep building. Keep learning. Keep moving forward.*
 
 </div>

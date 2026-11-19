@@ -6,6 +6,9 @@ Powers the profile README for [@mohd-junaid-05](https://github.com/mohd-junaid-0
 
 - `README.md` – the profile page. All meaningful content lives in Markdown, not only in artwork.
 - `assets/dino-world.svg` – animated hero: cozy night-mode scene with a pixel T-Rex sitting comfortably by a burning, crackling campfire.
+- `assets/workflow-panel.svg` – animated engineering loop HUD panel demonstrating the 4-stage Spec-Driven Development cycle.
+- `assets/loadout-panel.svg` – 4-slot inventory loadout panel categorizing equipped skills and tools.
+- `assets/quest-panel.svg` – quest log HUD panel highlighting featured software projects and community leadership.
 - `assets/checkpoint-panel.svg` – Checkpoint HUD panel with loading animation and running T-Rex.
 - `assets/metrics.plugin.isocalendar.svg` – isometric 3D commit calendar generated automatically by GitHub Actions (`.github/workflows/isocalendar.yml`).
 - `assets/static/` – animation-free twins of the animated assets, served to visitors who prefer reduced motion.
