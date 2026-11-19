@@ -668,6 +668,9 @@ def hero():
     p_c2 = {(c, r) for r, row in enumerate(CORE_2) for c, ch in enumerate(row) if ch == '#'}
     p_c3 = {(c, r) for r, row in enumerate(CORE_3) for c, ch in enumerate(row) if ch == '#'}
 
+    p_ptero1_flip = {(44 - x, y) for x, y in pix("ptero1")}
+    p_ptero2_flip = {(44 - x, y) for x, y in pix("ptero2")}
+
     defs = [
         sprite_path("dino_sit", p_sit),
         sprite_path("saguaro", p_saguaro),
@@ -679,8 +682,8 @@ def hero():
         sprite_path("fc1", p_c1),
         sprite_path("fc2", p_c2),
         sprite_path("fc3", p_c3),
-        sprite_path("ptero1", pix("ptero1")),
-        sprite_path("ptero2", pix("ptero2")),
+        sprite_path("ptero1", p_ptero1_flip),
+        sprite_path("ptero2", p_ptero2_flip),
         sprite_path("cloud", pix("cloud")),
         sprite_path("moon", pix("moon1")),
         sprite_path("star", pix("star1")),
