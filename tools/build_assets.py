@@ -671,6 +671,7 @@ def hero():
     defs = [
         sprite_path("dino_sit", p_sit),
         sprite_path("saguaro", p_saguaro),
+        sprite_path("cactus_small", pix("cactus_cs1")),
         sprite_path("fire_logs", p_logs),
         sprite_path("fl1", p_f1),
         sprite_path("fl2", p_f2),
@@ -678,46 +679,72 @@ def hero():
         sprite_path("fc1", p_c1),
         sprite_path("fc2", p_c2),
         sprite_path("fc3", p_c3),
+        sprite_path("ptero1", pix("ptero1")),
+        sprite_path("ptero2", pix("ptero2")),
         sprite_path("cloud", pix("cloud")),
         sprite_path("moon", pix("moon1")),
         sprite_path("star", pix("star1")),
     ]
 
     css = [
-        ".fl1{animation:fl1 .45s steps(1,end) infinite}",
-        ".fl2{animation:fl2 .45s steps(1,end) infinite}",
-        ".fl3{animation:fl3 .45s steps(1,end) infinite}",
-        "@keyframes fl1{0%,33.3%{opacity:1}33.4%,100%{opacity:0}}",
-        "@keyframes fl2{0%,33.3%{opacity:0}33.4%,66.6%{opacity:1}66.7%,100%{opacity:0}}",
-        "@keyframes fl3{0%,66.6%{opacity:0}66.7%,100%{opacity:1}}",
-        "@keyframes sp1{0%{transform:translate(0,0);opacity:1}100%{transform:translate(-3px,-22px);opacity:0}}",
-        "@keyframes sp2{0%{transform:translate(0,0);opacity:1}100%{transform:translate(4px,-26px);opacity:0}}",
-        "@keyframes sp3{0%{transform:translate(0,0);opacity:1}100%{transform:translate(1px,-30px);opacity:0}}",
+        ".fl1{animation:fl1 .42s linear infinite}",
+        ".fl2{opacity:0;animation:fl2 .42s linear infinite}",
+        ".fl3{opacity:0;animation:fl3 .42s linear infinite}",
+        "@keyframes fl1{0%,33.2%{opacity:1}33.3%,100%{opacity:0}}",
+        "@keyframes fl2{0%,33.2%{opacity:0}33.3%,66.5%{opacity:1}66.6%,100%{opacity:0}}",
+        "@keyframes fl3{0%,66.5%{opacity:0}66.6%,100%{opacity:1}}",
+        "@keyframes sp1{0%{transform:translate(0,0);opacity:1}100%{transform:translate(-3px,-24px);opacity:0}}",
+        "@keyframes sp2{0%{transform:translate(0,0);opacity:1}100%{transform:translate(4px,-28px);opacity:0}}",
+        "@keyframes sp3{0%{transform:translate(0,0);opacity:1}100%{transform:translate(1px,-32px);opacity:0}}",
+        "@keyframes sp4{0%{transform:translate(0,0);opacity:1}100%{transform:translate(-2px,-20px);opacity:0}}",
         ".sp1{animation:sp1 1.4s ease-out infinite}",
-        ".sp2{animation:sp2 1.8s ease-out infinite .5s}",
-        ".sp3{animation:sp3 2.2s ease-out infinite 1s}",
-        "@keyframes dblink{0%,94%,98%,100%{opacity:0}95%,97%{opacity:1}}",
-        ".dblink{animation:dblink 4s steps(1,end) infinite}",
-        "@keyframes c0{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
-        ".c0{animation:c0 60s linear infinite}",
-        "@keyframes c1{0%{transform:translateX(0)}100%{transform:translateX(-496px)}}",
-        ".c1{animation:c1 80s linear infinite}",
+        ".sp2{animation:sp2 1.8s ease-out infinite .4s}",
+        ".sp3{animation:sp3 2.2s ease-out infinite .9s}",
+        ".sp4{animation:sp4 1.6s ease-out infinite 1.3s}",
+        "@keyframes dblink{0%,93%,97%,100%{opacity:0}94%,96%{opacity:1}}",
+        ".dblink{opacity:0;animation:dblink 3.8s steps(1,end) infinite}",
+        "@keyframes c0{0%,100%{transform:translateX(0)}50%{transform:translateX(-10px)}}",
+        ".c0{animation:c0 14s ease-in-out infinite}",
+        "@keyframes c1{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}",
+        ".c1{animation:c1 18s ease-in-out infinite}",
+        "@keyframes pterofly{0%{transform:translateX(-50px);opacity:0}1.5%{opacity:1}56%{transform:translateX(460px);opacity:1}56.1%{opacity:0;transform:translateX(470px)}100%{opacity:0;transform:translateX(-50px)}}",
+        ".pterofly{transform:translateX(360px);animation:pterofly 26s linear infinite}",
+        "@keyframes pfa{0%,49.9%{opacity:1}50%,100%{opacity:0}}",
+        "@keyframes pfb{0%,49.9%{opacity:0}50%,100%{opacity:1}}",
+        ".pfa{animation:pfa .44s linear infinite}",
+        ".pfb{opacity:0;animation:pfb .44s linear infinite}",
     ]
 
-    # Sky on right side ONLY - clean background behind text on the left
+    # Night sky: stars in corners (completely clear of text, dino, and fire) + moon + gentle hovering clouds + slow pterodactyl
     sky = [
+        # Top-left corner stars (well above MOHD JUNAID which starts at y=120)
+        '<use href="#star" x="18" y="14" fill="#5f5f5f"/>',
+        '<use href="#star" x="42" y="26" fill="#5f5f5f"/>',
+        '<use href="#star" x="72" y="10" fill="#5f5f5f"/>',
+        '<use href="#star" x="105" y="22" fill="#5f5f5f"/>',
+        '<use href="#star" x="140" y="12" fill="#5f5f5f"/>',
+        # Top-right corner and sky stars
+        '<use href="#star" x="235" y="14" fill="#5f5f5f"/>',
+        '<use href="#star" x="295" y="18" fill="#5f5f5f"/>',
+        '<use href="#star" x="345" y="55" fill="#5f5f5f"/>',
+        '<use href="#star" x="375" y="16" fill="#5f5f5f"/>',
+        '<use href="#star" x="412" y="38" fill="#5f5f5f"/>',
+        '<use href="#star" x="430" y="15" fill="#5f5f5f"/>',
+        '<use href="#star" x="435" y="65" fill="#5f5f5f"/>',
+        '<use href="#star" x="424" y="95" fill="#5f5f5f"/>',
+        # Moon
         '<use href="#moon" x="250" y="24" fill="#6f6f6f"/>',
-        '<use href="#star" x="235" y="16" fill="#5f5f5f"/>',
-        '<use href="#star" x="245" y="70" fill="#5f5f5f"/>',
-        '<use href="#star" x="295" y="22" fill="#5f5f5f"/>',
-        '<use href="#star" x="335" y="65" fill="#5f5f5f"/>',
-        '<use href="#star" x="375" y="18" fill="#5f5f5f"/>',
-        '<use href="#star" x="415" y="45" fill="#5f5f5f"/>',
-        '<use href="#star" x="428" y="90" fill="#5f5f5f"/>',
+        # Clouds gently hovering in right quadrant
         f'<g fill="{DIM}">',
         '<g transform="translate(325 36)"><use href="#cloud" class="c0"/></g>',
         '<g transform="translate(385 75)"><use href="#cloud" class="c1"/></g>',
-        '</g>'
+        '</g>',
+        # Majestic pterodactyl flying slowly across the sky from left to right
+        '<g transform="translate(0 28)"><g class="pterofly">'
+        '<g fill="#888888">'
+        '<use href="#ptero1" class="pfa"/>'
+        '<use href="#ptero2" class="pfb"/>'
+        '</g></g></g>',
     ]
 
     bump = []
@@ -727,11 +754,14 @@ def hero():
     ground = (f'<rect x="0" y="{LINE_Y}" width="{xw}" height="1" fill="#b4b4b4"/>'
               f'<g fill="#8a8a8a">{"".join(bump)}</g>')
 
-    # Sitting Dino matching profile picture
+    # Small cactus on land under name on left side
+    cactus_small_elem = '<use href="#cactus_small" x="48" y="98" fill="#888888"/>'
+
+    # Sitting Dino matching profile picture with natural eye blink
     dino_elem = (
         f'<g fill="#e6e6e6">'
         f'<use href="#dino_sit" x="235" y="108"/>'
-        f'<rect class="dblink" x="254" y="109" width="2" height="2" fill="{BG}"/>'
+        f'<rect class="dblink" x="254" y="109" width="1.5" height="2" fill="#e6e6e6"/>'
         f'</g>'
     )
 
@@ -741,6 +771,7 @@ def hero():
         f'<rect class="sp1" x="10" y="4" width="2" height="2" fill="#ffaa00"/>'
         f'<rect class="sp2" x="15" y="2" width="2" height="2" fill="#ffdd00"/>'
         f'<rect class="sp3" x="7" y="6" width="1" height="1" fill="#ff7700"/>'
+        f'<rect class="sp4" x="12" y="5" width="1.5" height="1.5" fill="#ffbb00"/>'
         f'<g fill="#ff5e00">'
         f'<use href="#fl1" class="fl1"/>'
         f'<use href="#fl2" class="fl2"/>'
@@ -759,7 +790,7 @@ def hero():
     cactus_elem = f'<use href="#saguaro" x="395" y="102" fill="#888888"/>'
 
     wrap = f'<g transform="translate(0 {oy}) scale(2)">'
-    world_front = wrap + ground + cactus_elem + dino_elem + fire_elem + "</g>"
+    world_front = wrap + ground + cactus_small_elem + cactus_elem + dino_elem + fire_elem + "</g>"
     world_sky = wrap + "".join(sky) + "</g>"
 
     # Left-aligned clean typography with distraction-free background
@@ -773,8 +804,8 @@ def hero():
 
     return svg(H, "Mohd Junaid: Full-stack developer",
                "A professional monochrome hero banner. Left side features crisp typography for Mohd Junaid, "
-               "full-stack developer. Right side features an accurate pixel-art night scene with a T-Rex sitting "
-               "peacefully by a crackling campfire, a saguaro cactus, crescent moon, drifting clouds, and stars.",
+               "full-stack developer, with a small cactus on the land below. Right side features an accurate pixel-art night scene with a T-Rex sitting "
+               "peacefully by a crackling campfire, a saguaro cactus, crescent moon, gentle clouds, stars in the corners, and a pterodactyl gliding across the sky.",
                "".join(css), "".join(defs), "".join(body))
 
 
